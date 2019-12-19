@@ -33,7 +33,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Day13Arcade">
+  <component name="RunManager" selected="Application.Day19TractorBeam">
     <configuration name="Day11PaintRobot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Day11PaintRobot" />
       <module name="AdventCalender" />
@@ -55,8 +55,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day4Passwords" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day4Passwords" />
+    <configuration name="Day19TractorBeam" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day19TractorBeam" />
       <module name="AdventCalender" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -71,11 +71,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day19TractorBeam" />
         <item itemvalue="Application.Day13Arcade" />
         <item itemvalue="Application.Day12Jupiter" />
         <item itemvalue="Application.Day8ImageFormat" />
         <item itemvalue="Application.Day11PaintRobot" />
-        <item itemvalue="Application.Day4Passwords" />
       </list>
     </recent_temporary>
   </component>
