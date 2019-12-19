@@ -16,6 +16,10 @@ public class IntCode {
         return outputs;
     }
 
+    public Long getLastOutput() {
+        return outputs.get(outputs.size()-1);
+    }
+
     public ArrayList<Long> getProgram() {
         return program;
     }
