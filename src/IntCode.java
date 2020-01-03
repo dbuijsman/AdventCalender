@@ -149,6 +149,13 @@ public class IntCode {
         this.reset();
         return output;
     }
+    public long run(ArrayList<Long> input){
+        long output =0;
+        for(Long entry : input){
+            output = run(entry);
+        }
+        return output;
+    }
 
     /**
      * Gets the value of a parameter on the requested position.
