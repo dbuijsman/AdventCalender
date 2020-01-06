@@ -81,12 +81,8 @@ public class DonutMaze {
                 startTile.addNeighbour(portal);
                 endTile.addNeighbour(portal);
                 if(startPosition[0]==2 || startPosition[0]==maze[0].length-3 || startPosition[1]==2 || startPosition[1]==maze.length-3){
-                    System.out.println(portal.getName());
-                    System.out.println("(" + startPosition[0] + ", " + startPosition[1] + ") and (" + endPosition[0] + ", " + endPosition[1] + ")");
                     portal.setTiles(startTile,endTile);
                 } else {
-                    System.out.println(portal.getName());
-                    System.out.println("(" + endPosition[0] + ", " + endPosition[1] + ") and (" + startPosition[0] + ", " + startPosition[1] + ")");
                     portal.setTiles(endTile,startTile);
                 }
             }
@@ -98,7 +94,6 @@ public class DonutMaze {
     public int walk(){
         TileMaze.setMax_level(2400);
         try {
-            //start.walk();
             start.setOxygenStyle();
             while(end.getMinimalSteps(0)==Integer.MAX_VALUE){
                 for(TileMaze[] row : maze){
@@ -109,13 +104,11 @@ public class DonutMaze {
                     }
                 }
             }
-            print(0);
         } catch(StackOverflowError e){
-            System.out.println("StackOverflow... got: " + end.getMinimalSteps(0));
+            e.printStackTrace();
         }
         ArrayList<Integer> steps = end.getMinimalSteps();
         for (int key = 0; key < steps.size(); key++) {
-            System.out.println("Level " + key + " reached at " + steps.get(key));
         }
         return end.getMinimalSteps(0);
     }

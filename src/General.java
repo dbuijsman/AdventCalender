@@ -4,10 +4,13 @@ import java.util.Collection;
 import java.util.Scanner;
 
 public class General {
-
+    private String getDir(){
+        return this.getClass().getName();
+    }
     static String[] importResource(String fileName){
         ArrayList<String> ListOfLines = new ArrayList<>();
-        try(Scanner resource = new Scanner( new FileReader("D:\\AdventCalender\\resources\\" + fileName + ".txt"))){
+        String pathName = General.class.getResource("").getPath();
+        try(Scanner resource = new Scanner( new FileReader(pathName.substring(0,pathName.indexOf("AdventCalender")) + "\\AdventCalender\\resources\\" + fileName + ".txt"))){
             while (resource.hasNext()) {
                 String line = resource.nextLine();
                 ListOfLines.add(line);

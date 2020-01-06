@@ -29,35 +29,7 @@ public class TileMaze extends AbstractMazeTile{
     public void addNeighbour(AbstractMazeTile neighbour){
         neighbours.add(neighbour);
     }
-    public void walk(){
-        this.minimalSteps.add(0,0);
-        for(AbstractMazeTile neighbour : neighbours){
-            neighbour.walk(0,0, this);
-        }
-    }
-    void walk(int steps, int level, AbstractMazeTile lastTile){
-        if(level<minimalSteps.size() && steps>=minimalSteps.get(level)){
-            System.out.println("Overstepped " + steps + " while founding this at " + minimalSteps.get(level));
-            return;
-        }
-        if(steps>stepsToEnd){
-            System.out.println("Uh.. oh... too far.");
-        }
-        if(level>max_level){
-            System.out.println("Uh.. oh... too deep.");
-            return;
-        }
-        steps = setSteps(steps+1, level);
-        for(AbstractMazeTile neighbour : neighbours){
-            if(neighbour == lastTile){
-                continue;
-            }
-            neighbour.walk(steps, level, this);
-        }
-        if(stepsToEnd<Integer.MAX_VALUE){
-            System.out.println("d");
-        }
-    }
+
     private int setSteps(int steps, int level){
         while(minimalSteps.size()<=level){
             minimalSteps.add(Integer.MAX_VALUE);
@@ -73,7 +45,6 @@ public class TileMaze extends AbstractMazeTile{
         }
     }
     void setStepsToEnd(){
-        System.out.println("OOOO");
         stepsToEnd = minimalSteps.get(0);
     }
 

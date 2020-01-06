@@ -73,7 +73,37 @@ public class ASCII {
         }
         return output;
     }
+    public long run(ArrayList<String> stringArray){
+        ArrayList<Integer> input = new ArrayList<>();
+        for(String string : stringArray){
+            char[] characters = string.toCharArray();
+            for(char entry : characters){
+                input.add((int) entry);
+            }
+            input.add(10);
+        }
+        long output = 0;
+        try {
+            for (int entry : input) {
+                output = program.run(entry);
+            }
+        } catch(OutOfMemoryError e){
+            System.out.println(program.getLastOutput());
+            print();
+            e.printStackTrace();
+        }
+        return output;
+
+    }
     public long runWithFeed(Character[] routine, char feedOption){
+        if(feedOption != 'y' && feedOption != 'n'){
+            throw new IllegalArgumentException("Please enter if you want a continuous feed.");
+        }
+        run(routine);
+        program.run(feedOption);
+        return program.run(10L);
+    }
+    public long runWithFeed(ArrayList<String> routine, char feedOption){
         if(feedOption != 'y' && feedOption != 'n'){
             throw new IllegalArgumentException("Please enter if you want a continuous feed.");
         }
