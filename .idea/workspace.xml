@@ -33,23 +33,23 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Day19TractorBeam">
-    <configuration name="Day11PaintRobot" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day11PaintRobot" />
-      <module name="AdventCalender" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day12Jupiter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day12Jupiter" />
-      <module name="AdventCalender" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Day20DonutMaze">
     <configuration name="Day13Arcade" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Day13Arcade" />
+      <module name="AdventCalender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day15OxygenSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day15OxygenSystem" />
+      <module name="AdventCalender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day17SolarFlare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day17SolarFlare" />
       <module name="AdventCalender" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -62,8 +62,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Day8ImageFormat" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day8ImageFormat" />
+    <configuration name="Day20DonutMaze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day20DonutMaze" />
       <module name="AdventCalender" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -71,11 +71,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day20DonutMaze" />
+        <item itemvalue="Application.Day17SolarFlare" />
+        <item itemvalue="Application.Day15OxygenSystem" />
         <item itemvalue="Application.Day19TractorBeam" />
         <item itemvalue="Application.Day13Arcade" />
-        <item itemvalue="Application.Day12Jupiter" />
-        <item itemvalue="Application.Day8ImageFormat" />
-        <item itemvalue="Application.Day11PaintRobot" />
       </list>
     </recent_temporary>
   </component>
