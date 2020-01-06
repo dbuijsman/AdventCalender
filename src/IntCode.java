@@ -149,9 +149,9 @@ public class IntCode {
         this.reset();
         return output;
     }
-    public long run(ArrayList<Long> input){
+    public long run(Integer[] input){
         long output =0;
-        for(Long entry : input){
+        for(Integer entry : input){
             output = run(entry);
         }
         return output;

@@ -4,11 +4,11 @@ public class CleaningRobot {
     private ArrayList<ArrayList<Character>> map;
     private int[] location = new int[2];
     private int direction;
-    private ArrayList<Character> route = new ArrayList<>();
+    private ArrayList<String> route = new ArrayList<>();
     CleaningRobot(ArrayList<ArrayList<Character>> map){
         this.map = map;
     }
-    public ArrayList<Character> getRoute() {
+    public ArrayList<String> getRoute() {
         return route;
     }
     private void findLocation(){
@@ -36,32 +36,35 @@ public class CleaningRobot {
             }
         }
     }
-    public ArrayList<Character> findRoute(){
+    public ArrayList<String> findRoute(){
         findLocation();
         route = new ArrayList<>();
         int steps = 0;
         while(true){
             if(positionFrontFree()){
                 location = getPositionFront();
-                route.add('M');
                 steps ++;
             }else if(positionRightFree()){
-                route.add('R');
+                if(steps!=0){
+                    route.add(""+steps);
+                }
+                route.add("R");
                 steps = 0;
                 direction = (direction+1)%4;
             } else if(positionLeftFree()){
-                route.add('L');
+                if(steps!=0){
+                    route.add(""+steps);
+                }
+                route.add("L");
                 steps = 0;
                 direction = (direction+3)%4;
             }else{
+                if(steps!=0){
+                    route.add(""+steps);
+                }
                 break;
             }
         }
-        ArrayList<Character> function = getFunction(0,90);
-        System.out.println(function.toString());
-        System.out.println(function.size());
-        System.out.println(functionFits(0,function));
-        System.out.println(route.get(function.size()-1));
         return route;
     }
     private boolean positionFrontFree(){
@@ -106,32 +109,32 @@ public class CleaningRobot {
         }
         return new int[]{x,y};
     }
-    private ArrayList<Character> getFunction(int index, int maxLength){
-        int lengthFunction = 0;
-        ArrayList<Character> function = new ArrayList<>();
-        while(index<route.size() && lengthFunction<10 && function.size()<maxLength){
-            char step = route.get(index);
-            if(step=='A' || step=='B' || step=='C'){
-                break;
-            } else {
-                function.add(step);
-                if(step=='M'){
-                    int moveSteps=1;
-                    while(moveSteps<9 && route.get(index+1)=='M'){
-                        if(function.size()==maxLength){
-                            break;
-                        }
-                        index++;
-                        function.add('M');
-                        moveSteps++;
-                    }
-                }
-                lengthFunction++;
-            }
-            index++;
-        }
-        return function;
-    }
+//    private ArrayList<Character> getFunction(int index, int maxLength){
+//        int lengthFunction = 0;
+//        ArrayList<Character> function = new ArrayList<>();
+//        while(index<route.size() && lengthFunction<10 && function.size()<maxLength){
+//            char step = route.get(index);
+//            if(step=='A' || step=='B' || step=='C'){
+//                break;
+//            } else {
+//                function.add(step);
+//                if(step=='M'){
+//                    int moveSteps=1;
+//                    while(moveSteps<9 && route.get(index+1)=='M'){
+//                        if(function.size()==maxLength){
+//                            break;
+//                        }
+//                        index++;
+//                        function.add('M');
+//                        moveSteps++;
+//                    }
+//                }
+//                lengthFunction++;
+//            }
+//            index++;
+//        }
+//        return function;
+//    }
     private boolean functionFits(int index, ArrayList<Character> function){
         for(int ind=0; ind<function.size(); ind++){
             if(index+ind>= route.size()){

@@ -1,23 +1,23 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class ASCII {
     private IntCode program;
     private ArrayList<ArrayList<Character>> output;
-    private char[][] functions;
+    private Integer[][] functions;
     ASCII(IntCode program){
         this(program,3);
     }
     ASCII(IntCode program, int functionLength){
         this.program = program;
-        this.functions = new char[functionLength][];
-        this.functions[2] = new char[]{'1','1',10};
+        this.functions = new Integer[functionLength][];
     }
-    public void addFunction(char name, char[] input){
+    public void addFunction(char name, String[] input){
         if(input.length>10){
             throw new IllegalArgumentException("Input is too long (max 10).");
         }
-        functions[(int)name-'A'] = input;
+        functions[(int)name-'A'] = convertInput(input);
     }
     public void reset(){
         program.reset();
@@ -28,6 +28,9 @@ public class ASCII {
         output = new ArrayList<>();
         ArrayList<Character> line = new ArrayList<>();
         for(long number : outputArray){
+            if(number>128){
+                break;
+            }
             if(number == 10){
                 output.add(line);
                 line = new ArrayList<>();
@@ -39,32 +42,38 @@ public class ASCII {
     }
 
     private long run(char function){
-        char[] inputChar = functions[(int)function-'A'];
-        if(function=='C'){
-            ArrayList<Long> inp = new ArrayList<>();
-            inp.add((long)'1');
-            inp.add((long)'1');
-            inp.add(10L);
-            return program.run(inp);
-        }
-        return program.run(convertInput(inputChar));
+        return program.run(functions[(int)function-'A']);
     }
 
-    public long run(char[] routine){
+    public long run(Character[] routine){
         if(routine.length>10){
             throw new IllegalArgumentException("Routine is too long (max 10).");
         }
-        ArrayList<Long> input = convertInput(routine);
-        long output = 0;
-        for(Long entry : input){
-            output = program.run(entry);
+        ArrayList<Integer> input = new ArrayList<>();
+        for(char entry : routine){
+            if(entry-'A' > functions.length || entry-'A'<0){
+                throw new IllegalArgumentException("Main routine contains an invalid value." + entry);
+            }
+            input.add((int)entry);
+            input.add((int)',');
         }
-        for(int index=0;index<functions.length;index++){
-            output = run((char)((int)'A'+index));
+        input.set(input.size()-1, 10);
+        long output = 0;
+        try {
+            for (int entry : input) {
+                output = program.run(entry);
+            }
+            for (int index = 0; index < functions.length; index++) {
+                output = run((char) ((int) 'A' + index));
+            }
+        } catch(OutOfMemoryError e){
+            System.out.println(program.getLastOutput());
+            print();
+            e.printStackTrace();
         }
         return output;
     }
-    public long runWithFeed(char[] routine, char feedOption){
+    public long runWithFeed(Character[] routine, char feedOption){
         if(feedOption != 'y' && feedOption != 'n'){
             throw new IllegalArgumentException("Please enter if you want a continuous feed.");
         }
@@ -72,14 +81,17 @@ public class ASCII {
         program.run(feedOption);
         return program.run(10L);
     }
-    private ArrayList<Long> convertInput(char[] inputChar){
-        ArrayList<Long> input = new ArrayList<>();
-        for(char entry : inputChar){
-            input.add((long)entry);
-            input.add((long)',');
+    private Integer[] convertInput(String[] inputChar){
+        ArrayList<Integer> input = new ArrayList<>();
+        for(String entry : inputChar){
+            char[] charArray = entry.toCharArray();
+            for(char character : charArray){
+                input.add((int)character);
+            }
+            input.add((int)',');
         }
-        input.set(input.size()-1, 10L);
-        return input;
+        input.set(input.size()-1, 10);
+        return input.toArray(new Integer[0]);
     }
     public void print(){
         if(output==null){

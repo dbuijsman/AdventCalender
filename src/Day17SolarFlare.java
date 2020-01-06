@@ -28,15 +28,15 @@ public class Day17SolarFlare {
         }
         System.out.println("The sum of the intersections is " + sum);
         CleaningRobot robot = new CleaningRobot(map);
-        ArrayList<Character> route = robot.findRoute();
-        FittingFunctions17 fitting = new FittingFunctions17(route,10);
-        //fitting.makeRoutine();
+        ArrayList<String> route = robot.findRoute();
+        ASCII_Routine fit = new ASCII_Routine(route,20);
+        fit.makeRoutine();
         intCode.set(0,2L);
         ASCII ascii = new ASCII(new IntCode(intCode));
-        ascii.addFunction('A',new char[]{'1'});
-        ascii.addFunction('B',new char[]{'R'});
+        ascii.addFunction('A',fit.getFunctionA());
+        ascii.addFunction('B',fit.getFunctionB());
+        ascii.addFunction('C',fit.getFunctionC());
 
-        ascii.runWithFeed(new char[]{'B','C'},'n');
-        ascii.print();
+        System.out.println("The amount of dust collected is: " + ascii.runWithFeed(fit.getMainRoutine(),'n'));
     }
 }
