@@ -43,6 +43,18 @@ public class General {
         }
         return Math.max(1,Math.max(number1,number2));
     }
+    static long gcd(long number1, long number2){
+        number1 = Math.abs(number1);
+        number2 = Math.abs(number2);
+        while(number1*number2!=0){
+            if(number1>number2){
+                number1 -= number2;
+            } else {
+                number2 -= number1;
+            }
+        }
+        return Math.max(1,Math.max(number1,number2));
+    }
     static boolean isCloseTo(double number1, double number2){
             return Math.abs(number1-number2)<0.0005;
     }
@@ -63,5 +75,35 @@ public class General {
             }
         }
         return minimum;
+    }
+    static long multiplicativeInverseModulo(long number, long modulo){
+        if(number<0){
+            while(number<0){
+                number+= modulo;
+            }
+        }
+        if(number>modulo){
+            number = number%modulo;
+        }
+        long r_0 = modulo;
+        long r_1 = number;
+        long r_2 = 1;
+        long t_0 = 0;
+        long t_1 = 1;
+        long t_2;
+        long q;
+        while(r_2 > 0){
+            r_2 = r_0%r_1;
+            q = (r_0-r_2)/r_1;
+            t_2 = t_0-t_1*q;
+            r_0 = r_1;
+            r_1 = r_2;
+            t_0 = t_1;
+            t_1 = t_2;
+        }
+        while(t_0<0){
+            t_0+= modulo;
+        }
+        return t_0%modulo;
     }
 }
