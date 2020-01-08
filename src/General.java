@@ -43,18 +43,6 @@ public class General {
         }
         return Math.max(1,Math.max(number1,number2));
     }
-    static long gcd(long number1, long number2){
-        number1 = Math.abs(number1);
-        number2 = Math.abs(number2);
-        while(number1*number2!=0){
-            if(number1>number2){
-                number1 -= number2;
-            } else {
-                number2 -= number1;
-            }
-        }
-        return Math.max(1,Math.max(number1,number2));
-    }
     static boolean isCloseTo(double number1, double number2){
             return Math.abs(number1-number2)<0.0005;
     }
@@ -105,5 +93,29 @@ public class General {
             t_0+= modulo;
         }
         return t_0%modulo;
+    }
+    static long multiplyModulo(long a, long b, long modulo){
+        long result = 0;
+        boolean isDone = false;
+        int lengthModulo = ("" + modulo).length();
+        int subtractPower = Math.min(lengthModulo,18-lengthModulo);
+        int power = lengthModulo/subtractPower*subtractPower;
+        while(!isDone){
+            try{
+                long mult = Math.multiplyExact(a,b)%modulo;
+                isDone = true;
+                result = (result+mult)%modulo;
+            } catch(ArithmeticException e){
+                long subtract = a/(long)Math.pow(10,power);
+                long newMultiple = Math.multiplyExact(subtract,b)%modulo;
+                for(int n=0;n<power;n++){
+                    newMultiple = Math.multiplyExact(newMultiple,10)%modulo;
+                }
+                result = (result + newMultiple)%modulo;
+                a = a%(long)Math.pow(10,power);
+                power -= subtractPower;
+            }
+        }
+        return result;
     }
 }

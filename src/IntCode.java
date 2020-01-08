@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class IntCode {
     private ArrayList<Long> program;
@@ -7,6 +8,7 @@ public class IntCode {
     private int index=0;
     private boolean finished = false;
     private int relativeBase = 0;
+    private int indexFirstNewOutput = 0;
     IntCode(ArrayList<Long> program){
         this.program = program;
         this.currentProgram = new ArrayList<>(program);
@@ -15,7 +17,11 @@ public class IntCode {
     public ArrayList<Long> getOutputs() {
         return outputs;
     }
-
+    public List<Long> getNewOutputs(){
+        List<Long> newOutputs = outputs.subList(indexFirstNewOutput, outputs.size());
+        indexFirstNewOutput = outputs.size();
+        return newOutputs;
+    }
     public Long getLastOutput() {
         return outputs.get(outputs.size()-1);
     }
@@ -37,6 +43,7 @@ public class IntCode {
         this.index = 0;
         this.finished = false;
         this.relativeBase = 0;
+        this.indexFirstNewOutput = 0;
     }
     public long runNounVerb(int noun, int verb){
         ArrayList<Long> code = new ArrayList<>(this.program);
@@ -91,6 +98,9 @@ public class IntCode {
                 case 4: // Output test
                     outputs.add(getValue(index + 1, modes[0]));
                     this.index += 2;
+                    if(outputs.get(outputs.size()-1).equals((long)'?')){
+                        return Long.MAX_VALUE;
+                    }
                     break;
                 case 5: // Jump-if-true
                     if(getValue(index+1, modes[0])!=0){

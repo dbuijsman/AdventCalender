@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class ASCII {
     private IntCode program;
@@ -24,7 +25,7 @@ public class ASCII {
     }
 
     public ArrayList<ArrayList<Character>> getOutput() {
-        ArrayList<Long> outputArray = program.getOutputs();
+        List<Long> outputArray = program.getNewOutputs();
         output = new ArrayList<>();
         ArrayList<Character> line = new ArrayList<>();
         for(long number : outputArray){
@@ -82,6 +83,10 @@ public class ASCII {
             }
             input.add(10);
         }
+        if(input.size()==0){
+            System.out.print("Size is zero");
+            return program.run(Long.MAX_VALUE);
+        }
         long output = 0;
         try {
             for (int entry : input) {
@@ -124,9 +129,7 @@ public class ASCII {
         return input.toArray(new Integer[0]);
     }
     public void print(){
-        if(output==null){
-            getOutput();
-        }
+        getOutput();
         for(ArrayList<Character> line : output){
             System.out.println(line.toString().replace(", ","").replace("[","").replace("]",""));
         }

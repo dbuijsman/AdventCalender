@@ -2,63 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef19aa8f-5998-4ca9-9e4b-297627cc17f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day22SlamShuffle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SpaceDeck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BugsGrid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BugsGridMultidimensional.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Category6Network.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day23NIC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day24Bugs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Day25Cryo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NAT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/NIC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ASCII.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ASCII.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ASCII_Routine.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ASCII_Routine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/AbstractMazeTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/AbstractMazeTile.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Amplifier.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Amplifier.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Arcade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Arcade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Asteroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Asteroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Calc.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Calc.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/CleaningRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/CleaningRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day10Asteroids.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day10Asteroids.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day11PaintRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day11PaintRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day12Jupiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day12Jupiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day13Arcade.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day13Arcade.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day15OxygenSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day15OxygenSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day15RepairRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day15RepairRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day17SolarFlare.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day17SolarFlare.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day19TractorBeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day19TractorBeam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day1FuelRequirements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day1FuelRequirements.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day20DonutMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day20DonutMaze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day21SpringDroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day21SpringDroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day2IntCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day2IntCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day3CrossedWire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day3CrossedWire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day4Passwords.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day4Passwords.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day5DiagnosticProgram.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day5DiagnosticProgram.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day6Orbits.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day6Orbits.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day7Amplifiers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day7Amplifiers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day8ImageFormat.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day8ImageFormat.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day9SensorBoost.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day9SensorBoost.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/DonutMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/DonutMaze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/FittingFunctions17.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/FittingFunctions17.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/FreeTile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/FreeTile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day22SlamShuffle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day22SlamShuffle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/General.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/General.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/GridHull.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/GridHull.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/GridOxygen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/GridOxygen.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Image.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ImageLayer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ImageLayer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/IntCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/IntCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Jupiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Jupiter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/MapOfAsteroids.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/MapOfAsteroids.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Moon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Moon.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ObjectInSpace.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ObjectInSpace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Orbit.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Orbit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/PaintRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/PaintRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Panel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Panel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Portal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Portal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/RepairRobot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/RepairRobot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/RepairRobotCount.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/RepairRobotCount.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/TileMaze.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/TileMaze.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/TileOxygenSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/TileOxygenSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/TractorBeam.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/TractorBeam.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Wall.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Wall.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Wire.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Wire.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day21SpringDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day21SpringDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/SpaceDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/SpaceDeck.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Day 22 Slam Shuffle.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ASCII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ASCII.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day22SlamShuffle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day22SlamShuffle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/General.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/IntCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntCode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SpaceDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpaceDeck.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -82,6 +46,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
@@ -97,28 +62,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Day22SlamShuffle">
-    <configuration name="Day15OxygenSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day15OxygenSystem" />
-      <module name="AdventCalender" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day17SolarFlare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day17SolarFlare" />
-      <module name="AdventCalender" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Day20DonutMaze" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Day20DonutMaze" />
-      <module name="AdventCalender" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Day25Cryo">
     <configuration name="Day21SpringDroid" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Day21SpringDroid" />
       <module name="AdventCalender" />
@@ -133,13 +77,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Day23NIC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day23NIC" />
+      <module name="AdventCalender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day24Bugs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day24Bugs" />
+      <module name="AdventCalender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Day25Cryo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Day25Cryo" />
+      <module name="AdventCalender" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Day25Cryo" />
+        <item itemvalue="Application.Day24Bugs" />
+        <item itemvalue="Application.Day23NIC" />
         <item itemvalue="Application.Day22SlamShuffle" />
         <item itemvalue="Application.Day21SpringDroid" />
-        <item itemvalue="Application.Day20DonutMaze" />
-        <item itemvalue="Application.Day17SolarFlare" />
-        <item itemvalue="Application.Day15OxygenSystem" />
       </list>
     </recent_temporary>
   </component>
