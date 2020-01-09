@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef19aa8f-5998-4ca9-9e4b-297627cc17f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/BugsGrid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BugsGridMultidimensional.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Category6Network.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day23NIC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day24Bugs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Day25Cryo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NAT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NIC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ShipDroid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ASCII.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ASCII.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day22SlamShuffle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day22SlamShuffle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/General.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/General.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/IntCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/IntCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/SpaceDeck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/SpaceDeck.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Day 22 Slam Shuffle.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day25Cryo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day25Cryo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ASCII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ASCII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day22SlamShuffle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day22SlamShuffle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/General.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/General.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IntCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IntCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SpaceDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SpaceDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day25Cryo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day25Cryo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

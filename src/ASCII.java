@@ -23,7 +23,9 @@ public class ASCII {
     public void reset(){
         program.reset();
     }
-
+    public boolean isFinished(){
+        return program.isFinished();
+    }
     public ArrayList<ArrayList<Character>> getOutput() {
         List<Long> outputArray = program.getNewOutputs();
         output = new ArrayList<>();
@@ -84,7 +86,6 @@ public class ASCII {
             input.add(10);
         }
         if(input.size()==0){
-            System.out.print("Size is zero");
             return program.run(Long.MAX_VALUE);
         }
         long output = 0;
@@ -133,5 +134,13 @@ public class ASCII {
         for(ArrayList<Character> line : output){
             System.out.println(line.toString().replace(", ","").replace("[","").replace("]",""));
         }
+    }
+    public ArrayList<String> outputToStringArray(){
+        getOutput();
+        ArrayList<String> stringOutput = new ArrayList<>();
+        for(ArrayList<Character> line : output){
+            stringOutput.add(line.toString().replace(", ","").replace("[","").replace("]",""));
+        }
+        return stringOutput;
     }
 }

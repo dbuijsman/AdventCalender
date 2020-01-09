@@ -8,8 +8,10 @@ public class Day25Cryo {
         do{
             IntCode program = new IntCode(imp);
             ASCII ascii = new ASCII(program);
-            ascii.run(new ArrayList<>());
-            ascii.print();
+//            ascii.run(new ArrayList<>());
+//            ascii.print();
+            ShipDroid droid = new ShipDroid(ascii);
+            droid.run();
             while(!program.isFinished()){
                 ArrayList<String> input = new ArrayList<>();
                 String line = answer();
