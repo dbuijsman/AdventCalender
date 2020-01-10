@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef19aa8f-5998-4ca9-9e4b-297627cc17f2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Day18MazeWithKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MazeKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/StepCheckerMazeKeys.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TileMazeKey.java" afterDir="false" />
+    <list default="true" id="ef19aa8f-5998-4ca9-9e4b-297627cc17f2" name="Default Changelist" comment="Day18 p2 not totally correct. Attempting to walk with the next robot after every step.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ASCII.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ASCII.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day25Cryo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day25Cryo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Room$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Room$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Room.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ShipDroid$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ShipDroid$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/ShipDroid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/ShipDroid.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ASCII.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ASCII.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Day25Cryo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day25Cryo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Room.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ShipDroid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ShipDroid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day18MazeWithKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day18MazeWithKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/MazeKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/MazeKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/StepCheckerMazeKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/StepCheckerMazeKeys.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/TileMazeKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/TileMazeKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/Day18 Maze with keys.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Day18 Maze with keys.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Day18MazeWithKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day18MazeWithKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MazeKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MazeKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StepCheckerMazeKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StepCheckerMazeKeys.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TileMazeKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TileMazeKey.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -113,6 +108,14 @@
       <option name="presentableId" value="Default" />
       <updated>1575450750371</updated>
     </task>
+    <task id="LOCAL-00001" summary="Day 25 p1 finished and now day18 p2">
+      <created>1578653130002</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1578653130002</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -127,5 +130,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Day 25 p1 finished and now day18 p2" />
+    <MESSAGE value="Day18 p2 not totally correct. Attempting to walk with the next robot after every step." />
+    <option name="LAST_COMMIT_MESSAGE" value="Day18 p2 not totally correct. Attempting to walk with the next robot after every step." />
   </component>
 </project>

@@ -5,7 +5,7 @@ public class TileMazeKey {
     private char key;
     private char door;
     private ArrayList< TileMazeKey > neighbours;
-    private HashMap< HashSet<Character>, StepCheckerMazeKeys> minimalSteps= new HashMap<>();
+    private HashMap< HashSet<Character>, Integer> minimalSteps= new HashMap<>();
     TileMazeKey(char value){
         if(Character.isLowerCase(value)){
             key = value;
@@ -15,7 +15,6 @@ public class TileMazeKey {
         }
         neighbours = new ArrayList<>();
     }
-
     public static int getMinimum() {
         return minimum;
     }
@@ -30,12 +29,15 @@ public class TileMazeKey {
         neighbours.add(neighbour);
     }
     public void setStart(){
-        minimalSteps.put(new HashSet<>(), new StepCheckerMazeKeys(0));
+        minimalSteps.put(new HashSet<>(), 0);
     }
-    private void setStep(HashSet<Character> keys, int steps){
+    private StepCheckerMazeKeys setStep(StepCheckerMazeKeys stepChecker, int steps){
+        LinkedList<TileMazeKey> robots = new LinkedList<>(stepChecker.getTiles());
+        LinkedList<Integer> stepsPerRobot = new LinkedList<>(stepChecker.getMinimalSteps());
+        HashSet<Character> keys = stepChecker.getKeys();
         steps++;
         if(steps>=minimum){
-            return;
+            return null;
         }
         if(isKey() && !keys.contains(key)){
             HashSet<Character> newKeys = new HashSet<>(keys);
@@ -43,49 +45,50 @@ public class TileMazeKey {
             keys = newKeys;
             if(keys.size()==26){
                 minimum = steps;
+                robots.offer(this);
+                stepsPerRobot.offer(steps);
+                return new StepCheckerMazeKeys(robots,keys,stepsPerRobot);
             }
         }
         if(isDoor() && !keys.contains(Character.toLowerCase(door))){
-            return;
+            return null;
         }
         for(HashSet<Character> existingKeys : minimalSteps.keySet()){
             if(existingKeys.containsAll(keys)){
-                int oldSteps = minimalSteps.get(existingKeys).getMinimalSteps();
+                int oldSteps = minimalSteps.get(existingKeys);
                 if(oldSteps < steps){
-                    return;
+                    return null;
                 }
                 if(keys.containsAll(existingKeys) && oldSteps==steps){
-                    return;
+                    return null;
                 }
             }
         }
-        this.minimalSteps.put(keys,new StepCheckerMazeKeys(steps));
+        this.minimalSteps.put(keys,steps);
+        robots.offer(this);
+        stepsPerRobot.offer(steps);
+        return new StepCheckerMazeKeys(robots,keys,stepsPerRobot);
     }
-    public void walk(){
-        for(HashSet<Character> keys : minimalSteps.keySet()){
-            StepCheckerMazeKeys values = minimalSteps.get(keys);
-            if(values.getMinimalSteps()==100_000){
-                System.out.println(keys.size());
-            }
-            if(values.isChecked()){
-                continue;
-            }
-            if(values.getMinimalSteps()+1>=minimum){
-                values.setChecked(true);
-                continue;
-            }
-            for(TileMazeKey neighbour : neighbours){
-                neighbour.setStep(keys, values.getMinimalSteps());
-            }
-            values.setChecked(true);
-        }
-    }
-    public boolean isDone(){
-        for(StepCheckerMazeKeys values : minimalSteps.values()){
-            if(!values.isChecked()){
-                return false;
+    public ArrayList<StepCheckerMazeKeys> step(StepCheckerMazeKeys stepChecker, int steps){
+        ArrayList<StepCheckerMazeKeys> queue = new ArrayList<>();
+        for(TileMazeKey neighbour : neighbours){
+            StepCheckerMazeKeys newEntry = neighbour.setStep(stepChecker, steps);
+            if(newEntry!=null){
+                queue.add(newEntry);
             }
         }
-        return true;
+        if(queue.size()==0){
+            stepChecker.addFailedAttempt();
+            if(stepChecker.getFailedAttempts()==4){
+                return queue;
+            }
+            stepChecker.getTiles().offer(this);
+            stepChecker.getMinimalSteps().offer(steps);
+            queue.add(stepChecker);
+        }
+        return queue;
+    }
+    public static boolean isDone(){
+        return minimum<Integer.MAX_VALUE;
     }
 }
