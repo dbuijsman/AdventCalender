@@ -1,11 +1,13 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Random;
 import java.util.Scanner;
 
 public class ShipDroid {
     private ASCII ascii;
     private ArrayList<Item> inventory = new ArrayList<>();
     private ArrayList<Item> allItems = new ArrayList<>();
+    private  ArrayList<Item> droppedItems = new ArrayList<>();
     private HashMap<String, Room> rooms = new HashMap<>();
     private ArrayList<Room.Direction> directions = new ArrayList<>();
     ShipDroid(ASCII computer){
@@ -31,9 +33,6 @@ public class ShipDroid {
             LOOP: while(!ascii.isFinished()){
                 if(!tookItem) {
                     output = ascii.outputToStringArray();
-                    for(String line : output){
-                        System.out.println(line);
-                    }
                     String nameRoom = null;
                     boolean foundRoomName = false;
                     boolean foundDoors = false;
@@ -125,9 +124,6 @@ public class ShipDroid {
                     if (nextRoom == null) {
                         if(rooms.containsKey(nameRoom)){
                             nextRoom = rooms.get(nameRoom);
-                            if(nextRoom.getName().equals("Checkpoint")){
-                                print();
-                            }
                         } else {
                             nextRoom = new Room(nameRoom);
                             nextRoom.addWalls(doors);
@@ -149,10 +145,12 @@ public class ShipDroid {
                     currentRoom.checkExplored();
                     nextRoom = null;
                 }
+                if(inventory.size()==8 && currentRoom.getName().contains("Security Checkpoint")){
+                    break LOOP;
+                }
                 ArrayList<String> commands = new ArrayList<>();
                 String newCommand = currentRoom.getNextCommand(newDirection);
                 commands.add(newCommand);
-                System.out.println(newCommand);
                 if(newCommand.startsWith("take")){
                     tookItem = true;
                 } else {
@@ -170,9 +168,6 @@ public class ShipDroid {
                     item.checked();
                     if(ascii.isFinished()){
                         item.makeLethal();
-                        for(String line : output){
-                            System.out.println(line);
-                        }
                         inp = "deadeee";
                     } else {
                         inventory.add(item);
@@ -180,26 +175,12 @@ public class ShipDroid {
                     }
 
                 }
-                if(inp == null || !inp.equals("deadeee")){
-                    inp =answer();
-                }
-                if(inp.startsWith("STAHP")){
-                    break;
-                }
-            }
-            for(String line : output){
-                System.out.println(line);
             }
             if(inp != null && inp.equals("deadeee")){
-                System.out.println("AGAIN!!!!");
                 inp = "yes";
-            } else {
-                System.out.println("Again? ");
-                inp =answer();
-            }
-            if(inp.startsWith("print")){
-                print();
-                inp = "no";
+            } else if(inventory.size()==8 && currentRoom.getName().contains("Security Checkpoint")){
+                tryCheckpoint();
+                return;
             }
         } while(inp.startsWith("y"));
     }
@@ -233,6 +214,7 @@ public class ShipDroid {
         int countItems = 0;
         for(Item item : allItems){
             if(item.mayPickUp() && !inventory.contains(item)){
+                System.out.println("We missed the item: " + item.getName());
                 countItems++;
             }
         }
@@ -242,5 +224,43 @@ public class ShipDroid {
             countRooms += room.getUnknownNeighbours();
         }
         System.out.println("There are " + countRooms + " unknown doors.");
+    }
+    public void tryCheckpoint(){
+        droppedItems = new ArrayList<>();
+        String weight = checkWeight();
+        while(!weight.equals("perfect weigth")){
+            ArrayList<String> input = new ArrayList<>();
+            if(weight.equals("heavier")){
+                Item itemToTake = droppedItems.get(new Random().nextInt(droppedItems.size()));
+                droppedItems.remove(itemToTake);
+                inventory.add(itemToTake);
+                input.add("take " + itemToTake.getName());
+            } else {
+                Item itemToDrop = inventory.get(new Random().nextInt(inventory.size()));
+                inventory.remove(itemToDrop);
+                droppedItems.add(itemToDrop);
+                input.add("drop " + itemToDrop.getName());
+            }
+            ascii.run(input);
+            weight = checkWeight();
+        }
+    }
+    public String checkWeight(){
+        ArrayList<String> input = new ArrayList<>();
+        input.add("west");
+        ascii.run(input);
+        ArrayList<String> output = ascii.outputToStringArray();
+        for(String line : output){
+            if(line.contains("heavier")){
+                return "heavier";
+            }
+            if(line.contains("lighter")){
+                return "lighter";
+            }
+        }
+        for(String line : output){
+            System.out.println(line);
+        }
+        return "perfect weigth";
     }
 }

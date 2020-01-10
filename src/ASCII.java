@@ -43,6 +43,9 @@ public class ASCII {
         }
         return this.output;
     }
+    public long getLastOutput(){
+        return program.getLastOutput();
+    }
 
     private long run(char function){
         return program.run(functions[(int)function-'A']);

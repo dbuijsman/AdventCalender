@@ -30,6 +30,14 @@ public class Room {
     public int getUnknownNeighbours(){
         return 4-neighbours.values().size();
     }
+    public boolean nextToCheckpoint(){
+        for(Room neighbour : neighbours.values()){
+            if(neighbour.isCheckpoint){
+                return true;
+            }
+        }
+        return false;
+    }
     public String getName() {
         return name;
     }
