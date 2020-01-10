@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ef19aa8f-5998-4ca9-9e4b-297627cc17f2" name="Default Changelist" comment="Day18 p2 not totally correct. Attempting to walk with the next robot after every step.">
+    <list default="true" id="ef19aa8f-5998-4ca9-9e4b-297627cc17f2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/Day18MazeWithKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/Day18MazeWithKeys.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/MazeKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/MazeKeys.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/StepCheckerMazeKeys.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/StepCheckerMazeKeys.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AdventCalender/TileMazeKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AdventCalender/TileMazeKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/Day18 Maze with keys.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/Day18 Maze with keys.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Day18MazeWithKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Day18MazeWithKeys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MazeKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MazeKeys.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StepCheckerMazeKeys.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StepCheckerMazeKeys.java" afterDir="false" />
@@ -115,7 +114,14 @@
       <option name="project" value="LOCAL" />
       <updated>1578653130002</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Day18 p2 not totally correct. Attempting to walk with the next robot after every step.">
+      <created>1578670274916</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1578670274916</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

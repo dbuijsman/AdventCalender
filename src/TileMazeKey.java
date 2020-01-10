@@ -31,9 +31,11 @@ public class TileMazeKey {
     public void setStart(){
         minimalSteps.put(new HashSet<>(), 0);
     }
-    private StepCheckerMazeKeys setStep(StepCheckerMazeKeys stepChecker, int steps){
+    private StepCheckerMazeKeys setStep(StepCheckerMazeKeys stepChecker, int steps, TileMazeKey tileLastKey, int stepsToLastKey){
         LinkedList<TileMazeKey> robots = new LinkedList<>(stepChecker.getTiles());
         LinkedList<Integer> stepsPerRobot = new LinkedList<>(stepChecker.getMinimalSteps());
+        LinkedList<TileMazeKey> tilesLastKey = new LinkedList<>(stepChecker.getTileLastKey());
+        LinkedList<Integer> stepsToKeyPerRobot = new LinkedList<>(stepChecker.getMinimalStepsToLastKey());
         HashSet<Character> keys = stepChecker.getKeys();
         steps++;
         if(steps>=minimum){
@@ -43,11 +45,28 @@ public class TileMazeKey {
             HashSet<Character> newKeys = new HashSet<>(keys);
             newKeys.add(key);
             keys = newKeys;
+            stepsToLastKey = steps;
+            tileLastKey = this;
+            for(int times = 0; times<4;times++){
+                robots.poll();
+                TileMazeKey newTile = tilesLastKey.poll();
+                robots.offer(newTile);
+                tilesLastKey.offer(newTile);
+                stepsPerRobot.poll();
+                int lastSteps = stepsToKeyPerRobot.poll();
+                stepsPerRobot.offer(lastSteps);
+                stepsToKeyPerRobot.offer(lastSteps);
+
+            }
+
             if(keys.size()==26){
                 minimum = steps;
                 robots.offer(this);
                 stepsPerRobot.offer(steps);
-                return new StepCheckerMazeKeys(robots,keys,stepsPerRobot);
+                tilesLastKey.offer(this);
+                stepsToKeyPerRobot.offer(steps);
+                System.out.print(stepsToKeyPerRobot);
+                return new StepCheckerMazeKeys(robots,keys,stepsPerRobot,tilesLastKey,stepsToKeyPerRobot);
             }
         }
         if(isDoor() && !keys.contains(Character.toLowerCase(door))){
@@ -60,19 +79,21 @@ public class TileMazeKey {
                     return null;
                 }
                 if(keys.containsAll(existingKeys) && oldSteps==steps){
-                    return null;
+                    break;
                 }
             }
         }
         this.minimalSteps.put(keys,steps);
         robots.offer(this);
         stepsPerRobot.offer(steps);
-        return new StepCheckerMazeKeys(robots,keys,stepsPerRobot);
+        tilesLastKey.offer(tileLastKey);
+        stepsToKeyPerRobot.offer(stepsToLastKey);
+        return new StepCheckerMazeKeys(robots,keys,stepsPerRobot,tilesLastKey,stepsToKeyPerRobot);
     }
-    public ArrayList<StepCheckerMazeKeys> step(StepCheckerMazeKeys stepChecker, int steps){
+    public ArrayList<StepCheckerMazeKeys> step(StepCheckerMazeKeys stepChecker, int steps, TileMazeKey tileLastKey, int stepsToLastKey){
         ArrayList<StepCheckerMazeKeys> queue = new ArrayList<>();
         for(TileMazeKey neighbour : neighbours){
-            StepCheckerMazeKeys newEntry = neighbour.setStep(stepChecker, steps);
+            StepCheckerMazeKeys newEntry = neighbour.setStep(stepChecker, steps, tileLastKey, stepsToLastKey);
             if(newEntry!=null){
                 queue.add(newEntry);
             }
@@ -84,7 +105,9 @@ public class TileMazeKey {
             }
             stepChecker.getTiles().offer(this);
             stepChecker.getMinimalSteps().offer(steps);
-            queue.add(stepChecker);
+            stepChecker.getMinimalStepsToLastKey().offer(stepsToLastKey);
+            stepChecker.getTileLastKey().offer(tileLastKey);
+            queue.add(new StepCheckerMazeKeys(stepChecker));
         }
         return queue;
     }

@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Day18MazeWithKeys {
     public static void main(String[] args){
         String[] input = General.importResource("Day18 Maze with keys");
+        //input = General.importResource("TEST");
         char[][] mazeAsArray = new char[input.length][];
         for(int index=0;index<input.length;index++){
             mazeAsArray[index] = input[index].toCharArray();
